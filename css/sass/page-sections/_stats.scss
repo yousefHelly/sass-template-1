@@ -1,0 +1,49 @@
+.stats {
+  background-image: url(../imgs/stats.jpg);
+  background-size: cover;
+  min-height: 35vh;
+  position: relative;
+  @include flex(row, center, center);
+  @include overlay(black, 0.7);
+  .container {
+    position: relative;
+    @include grid(4);
+    gap: 25px;
+    margin: 25px;
+    .stat-card {
+      text-align: center;
+      background-color: white;
+      padding: 25px;
+      position: relative;
+      p {
+        font-size: 23px;
+        font-weight: bold;
+      }
+      h3 {
+        text-transform: uppercase;
+        font-size: 18px;
+      }
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        background-color: $main-color;
+        transition: 0.5s;
+        width: 5px;
+        height: 0%;
+      }
+      &::before {
+        left: 0;
+        top: 0;
+      }
+      &::after {
+        right: 0;
+        bottom: 0;
+      }
+      &:hover::before,
+      &:hover::after {
+        height: 100%;
+      }
+    }
+  }
+}

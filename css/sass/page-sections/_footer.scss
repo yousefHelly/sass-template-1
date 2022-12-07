@@ -1,0 +1,101 @@
+footer {
+  padding: 50px 0;
+  background-color: $alt-color;
+  color: $main-text;
+  overflow: hidden;
+  .container {
+    @include grid(4);
+    gap: 35px;
+    h3.header {
+      font-size: 23px;
+      font-weight: 400;
+      margin: 15px 0;
+    }
+    ul {
+      li {
+        cursor: pointer;
+        padding: 15px 0;
+        position: relative;
+        &::before {
+          @include fill(initial, initial, 0, 0, 0%, 2px);
+          background-color: $main-color;
+        }
+        &:hover::before {
+          width: 100%;
+        }
+        a {
+          color: white;
+          text-decoration: none;
+          font-weight: 400;
+          text-transform: capitalize;
+        }
+      }
+    }
+    .footer-info {
+      .logo {
+        width: 75px;
+        img {
+          filter: invert(1);
+          max-width: 100%;
+          padding-left: 20px;
+        }
+      }
+      p.info {
+        padding: 20px 0;
+        line-height: 2;
+      }
+      p.copy-right {
+        padding: 25px 0px;
+        span {
+          color: $main-color;
+        }
+      }
+    }
+  }
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+
+    p {
+      padding: 25px 0;
+      line-height: 2;
+    }
+    a.contact {
+      background-color: $main-color;
+      padding: 20px;
+      border-radius: 25px;
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      text-align: center;
+      position: relative;
+      transition: 0.6s;
+      &:hover {
+        box-shadow: 0 0 0 1000px #ffe50082;
+      }
+    }
+    .social-media-links {
+      @include flex(row, flex-start, center);
+      padding: 25px 0;
+      i {
+        @include flex;
+        color: black;
+        background-color: white;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        margin: 5px;
+        font-size: 20px;
+        transition: 0.3s;
+        cursor: pointer;
+        &::before {
+          font-family: "Font Awesome 5 Brands";
+        }
+        &:hover {
+          color: $main-color;
+          background-color: $alt-color;
+        }
+      }
+    }
+  }
+}

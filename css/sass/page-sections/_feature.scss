@@ -1,0 +1,22 @@
+.feature {
+  @extend %section-padding;
+  position: relative;
+  .container {
+    @include flex(column, center, center, 50px);
+    i {
+      font-size: 5rem;
+      color: $main-color;
+      &::before {
+        @extend %i-FA;
+      }
+    }
+    p.feature-des {
+      width: 50%;
+      line-height: 2;
+      @include breakpoint("under-medium") {
+        width: 75%;
+        line-height: 2;
+      }
+    }
+  }
+}

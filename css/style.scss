@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+}
+ul {
+  list-style: none;
+}
+i::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-style: normal;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+p {
+  line-height: 1.6;
+}
+/* small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+// colors
+$main-text: #ffffff;
+$main-color: #ffe500;
+$alt-color: #1a1a1a;
+$sec-color: #f4f4f4;
+//import Landing
+@import "./sass/page-sections/_landing.scss";
+
+//import Feature
+@import "./sass/page-sections/feature";
+
+//import Services
+@import "./sass/page-sections/services";
+
+//import Stats
+@import "./sass/page-sections/stats";
+
+//import portfolio
+@import "./sass/page-sections/portfolio";
+
+//import video
+@import "./sass/page-sections/video";
+
+//import team
+@import "./sass/page-sections/team";
+
+//import quote
+@import "./sass/page-sections/quote";
+
+//import footer
+@import "./sass/page-sections/footer";

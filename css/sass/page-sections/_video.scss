@@ -1,0 +1,90 @@
+.video {
+  position: relative;
+  background-image: url(../imgs/video.jpg);
+  background-size: cover;
+  @include overlay(black, 0.7);
+  height: 45vh;
+  .container {
+    position: relative;
+    @include flex;
+    height: 100%;
+    .vid-title {
+      color: $main-color;
+      position: relative;
+      h3 {
+        border: 1px solid;
+        padding: 20px 30px;
+        text-transform: uppercase;
+        font-weight: 400;
+        letter-spacing: 8px;
+        cursor: pointer;
+        position: relative;
+        transition-delay: 0.3s;
+        z-index: 5;
+        &::before,
+        &::after {
+          @extend %before-after-header-fill;
+          z-index: -1;
+          opacity: 0;
+        }
+        @extend %before-after-header-position;
+        &:hover::before {
+          animation: left-video-animation 1s forwards;
+        }
+        &:hover::after {
+          animation: right-video-animation 1s forwards;
+        }
+        &:hover {
+          overflow: hidden;
+          color: $alt-color;
+        }
+      }
+      &::before,
+      &::after {
+        @extend %before-after-header-fill;
+        transition: 0.3s;
+        z-index: 1;
+      }
+      @extend %before-after-header-position;
+      &:hover::before {
+        left: 0;
+        top: 0;
+      }
+      &:hover::after {
+        right: 0;
+        bottom: 0;
+      }
+    }
+  }
+}
+
+@keyframes left-video-animation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+    top: 0;
+    width: 102%;
+    height: 100%;
+    border-radius: 0;
+    transform: rotate(10deg);
+    transform-origin: top left;
+  }
+}
+@keyframes right-video-animation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    right: 0;
+    bottom: 0;
+    width: 102%;
+    height: 100%;
+    border-radius: 0;
+    transform: rotate(10deg);
+    transform-origin: bottom right;
+  }
+}

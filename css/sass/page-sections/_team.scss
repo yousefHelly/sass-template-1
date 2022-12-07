@@ -1,0 +1,45 @@
+.team {
+  @extend %section-padding;
+  .team-header {
+    @extend %header;
+  }
+  .members {
+    margin: 0 {
+      top: 100px;
+      bottom: 50px;
+    }
+    @include grid(4);
+    gap: 25px;
+    .member-card {
+      max-width: 100%;
+      text-align: center;
+      @include flex(column);
+      .img {
+        position: relative;
+        width: 250px;
+        height: 315px;
+        img {
+          width: 250px;
+          height: 300px;
+        }
+        h3 {
+          background-color: #ffe500b3;
+          padding: 15px;
+          position: absolute;
+          bottom: 10px;
+          width: 100%;
+          text-align: center;
+          backdrop-filter: blur(5px);
+          text-transform: capitalize;
+          letter-spacing: 5px;
+        }
+      }
+      .member-info {
+        line-height: 1.6;
+        padding: 5px;
+        color: #777777;
+        width: 250px;
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+//import mixins
+@import "../helpers/mixins";
+//import placeholders
+@import "../helpers/placeholders";
+.landing {
+  @include overlay(black, 0.5);
+  background-image: url(../imgs/landing.jpg);
+  background-size: cover;
+  height: 40vw;
+  position: relative;
+  .container {
+    position: relative;
+    height: 100%;
+    nav {
+      @include flex(row, space-between, center);
+      height: 72px;
+      img.logo {
+        max-height: 100%;
+        filter: invert(1);
+      }
+      i {
+        color: $main-color;
+        font-size: 2rem;
+        margin: 25px;
+        cursor: pointer;
+        transition: 0.3s;
+        &:hover {
+          color: $sec-color;
+        }
+      }
+    }
+    .landing-content {
+      color: $main-text;
+      @include flex(column, center, center);
+      @extend %center;
+      width: 100%;
+      h2.title {
+        text-transform: capitalize;
+        letter-spacing: 12px;
+        font-weight: 400;
+      }
+      p.title-des {
+        text-transform: capitalize;
+        letter-spacing: 5px;
+        font-size: 14px;
+        margin: 20px 0 {
+          bottom: 50px;
+        }
+      }
+      button.design-btn {
+        @extend %button;
+      }
+    }
+    img.go-bottom {
+      @extend %centerX;
+      bottom: 10px;
+      width: 45px;
+      filter: invert(1);
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        transform: translateX(-50%) scale(1.1);
+      }
+    }
+  }
+  @include breakpoint("medium") {
+    height: 50vw;
+  }
+  @include breakpoint("small") {
+    height: 65vw;
+  }
+  @include breakpoint("mobile") {
+    height: 650px;
+    .container .landing-content h2.title {
+      text-align: center;
+      font-size: 20px;
+      letter-spacing: 5px;
+      line-height: 1.6;
+    }
+    .container .landing-content p.title-des {
+      text-align: center;
+      line-height: 1.6;
+      font-size: 12px;
+      letter-spacing: 4px;
+    }
+  }
+}
